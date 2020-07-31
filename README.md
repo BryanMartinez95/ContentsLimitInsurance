@@ -6,8 +6,17 @@ A web app made for Nude Solutions Developer Assignment for the purposes of allow
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ## Prerequisites
-## Installing
+Install NET Core SDK https://dotnet.microsoft.com/download
+
+Install Entity Framework Core CLI or PMC Tools
+
+- [CLI](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet) 
+
+- [Visual Studio 2019 Package Manager Console](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/powershell)
+
 ## Testing
+### Swagger URL
+- `https://localhost:44326/swagger/index.html`
 ## Deployment
 ## Built With
 - [React](https://reactjs.org/) Front End SPA
@@ -22,7 +31,7 @@ These instructions will get you a copy of the project up and running on your loc
 ## License
 This project is licensed under the MIT License - see the [LICENSE.MD](https://github.com/BryanMartinez95/ContentsLimitInsurance/blob/master/LICENSE) file for details
 
-## Useful Database Commands
+## Useful Database Commands (For CLI)
 - dotnet ef migrations add {MIGRATION_NAME} --add migration
 - dotnet ef database update  --update database
 - dotnet ef database update {MIGRATION_NAME} -- target a specific migration
