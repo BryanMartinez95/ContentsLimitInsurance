@@ -1,5 +1,8 @@
+using AutoMapper;
+using ContentsLimitInsurance.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +24,13 @@ namespace ContentsLimitInsurance
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllersWithViews();
+
+            services.AddAutoMapper(typeof(Startup).Assembly);
+            services.AddControllers();
+            services.AddDbContext<ContentsLimitContext>(options => options.UseSqlite(Configuration.GetConnectionString("ContentsLimitDatabase")));
+
+
+            services.AddSwaggerGen();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -36,19 +45,31 @@ namespace ContentsLimitInsurance
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+
+                // Enable middleware to serve generated Swagger as a JSON endpoint.
+                app.UseSwagger();
+
+
+                // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+                // specifying the Swagger JSON endpoint.
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                });
+
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseSpaStaticFiles();
+
+            //todo double check these ones
+            // app.UseStaticFiles();
+            // app.UseSpaStaticFiles();
+            
 
             app.UseRouting();
+
+
+            // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -57,15 +78,17 @@ namespace ContentsLimitInsurance
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }
-            });
+            //todo double check spa wiring
+            // app.UseSpa(spa =>
+            // {
+            //     spa.Options.SourcePath = "ClientApp";
+            //
+            //     if (env.IsDevelopment())
+            //     {
+            //         spa.UseReactDevelopmentServer(npmScript: "start");
+            //     }
+            // });
         }
     }
 }
