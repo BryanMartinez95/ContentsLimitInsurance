@@ -10,10 +10,12 @@ These instructions will get you a copy of the project up and running on your loc
 ## Testing
 ## Deployment
 ## Built With
-- ASP.NET Core 3.1
-- EntityFrameworkCore
-- sqlite
-- React
+- [React](https://reactjs.org/) Front End SPA
+- [ASP.NET Core 3.1](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) Back End API
+- [EntityFrameworkCore](https://docs.microsoft.com/en-us/ef/) on SQLite for demo purposes.
+- [Automapper](https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection) Entity to Dto Mapping
+- [Swagger](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) API Documentation/Testing
+
 ## Authors
 - Bryan Martinez
 
