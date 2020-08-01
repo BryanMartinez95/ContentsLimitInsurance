@@ -62,8 +62,8 @@ namespace ContentsLimitInsurance
             app.UseHttpsRedirection();
 
             //todo double check these ones
-            // app.UseStaticFiles();
-            // app.UseSpaStaticFiles();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
             
 
             app.UseRouting();
@@ -78,17 +78,15 @@ namespace ContentsLimitInsurance
                     pattern: "{controller}/{action=Index}/{id?}");
             });
 
-
-            //todo double check spa wiring
-            // app.UseSpa(spa =>
-            // {
-            //     spa.Options.SourcePath = "ClientApp";
-            //
-            //     if (env.IsDevelopment())
-            //     {
-            //         spa.UseReactDevelopmentServer(npmScript: "start");
-            //     }
-            // });
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+            
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
+            });
         }
     }
 }
