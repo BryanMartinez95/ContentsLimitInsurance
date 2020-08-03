@@ -1,43 +1,36 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from "react";
+import AssetList from "../../components/Asset/AssetList";
+import NewAssetForm from "../../components/Asset/NewAssetForm";
+import axios from "../../api";
 
-import AssetList from '../../components/Asset/AssetList';
-import AssetGroupSelector from '../../components/Asset/AssetGroupSelector';
-import NewAsset from '../../components/Asset/NewAsset';
-
-import axios from '../../api'
-
-const Home = props => {
-  const [assetListState,setAssetListState] = useState([]);
+const Home = () => {
+  const [assetGroupListState, setAssetListState] = useState([]);
 
   useEffect(() => {
-    axios.get('Asset')
-    .then((response) => {
+    getAssetListHandler();
+  }, []);
+
+  const getAssetListHandler = () => {
+    axios.get("Asset").then((response) => {
+      console.log("getresposne", response.data);
       setAssetListState(response.data);
     });
-  },[]);
+  };
 
-
-  useEffect(() => {
-      console.log(assetListState);
-  },[assetListState]);
-
-
-  
-    const assetGroupSelectorHandler = (group,id) => {
-        console.log('??',group,id);
-    }
-
-
+  const deleteAssetRowHandler = (id) => {
+    axios.delete("Asset/" + id).then((response) => {
+      getAssetListHandler();
+    });
+  };
 
   return (
-      <Fragment>
-          <AssetGroupSelector change={() => assetGroupSelectorHandler}></AssetGroupSelector>
-           <AssetList inventoryGroups={assetListState} 
-              groupBy={assetListState.groupBy}>
-          </AssetList>
-          <NewAsset></NewAsset>
-
-      </Fragment>
+    <Fragment>
+      <AssetList
+        assetGroupList={assetGroupListState}
+        deleteAssetRowHandler={deleteAssetRowHandler}
+      ></AssetList>
+      <NewAssetForm updateAssetList={getAssetListHandler}></NewAssetForm>
+    </Fragment>
   );
 };
 

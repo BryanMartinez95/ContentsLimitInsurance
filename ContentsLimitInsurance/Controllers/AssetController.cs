@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using ContentsLimitInsurance.Data;
@@ -28,30 +29,61 @@ namespace ContentsLimitInsurance.Controllers
 
 
         [HttpGet]
-        public IEnumerable<AssetDto> Get()
+        [ProducesResponseType(typeof(List<AssetGroupDto>), (int)HttpStatusCode.OK)]
+        public List<AssetGroupDto> GetAssetGroupList()
         {
-            // return _mapper.Map<List<AssetDto>>(_context.Assets.Include("AssetCategory").Where(x => x.IsDeleted == false).ToList()).GroupBy(x=> x.AssetCategoryName);
-            return _mapper.Map<List<AssetDto>>(_context.Assets.Include("AssetCategory").Where(x => x.IsDeleted == false).ToList());
+            var assetListGroup = _mapper.Map<List<AssetDto>>(_context.Assets.Include("AssetCategory").Where(x => x.IsDeleted == false).ToList()).GroupBy(x=> x.AssetCategoryId);
+            var groupByList = new List<AssetGroupDto>();
+
+            var assetCategories = _context.AssetCategories.Where(x=> x.IsDeleted == false).ToList();
+            foreach (var assetGroup in assetListGroup)
+            {
+                groupByList.Add(new AssetGroupDto
+                {
+                    GroupById = assetGroup.Key,
+                    GroupByValue = assetCategories.FirstOrDefault(x=> x.Id == assetGroup.Key)?.Name,
+                    Total = assetGroup.Select(x=> x.Value).Sum(),
+                    AssetList = assetGroup.ToList()
+
+                });
+            }
+            return groupByList;
         }
-
-
 
 
         [HttpPost]
-        public async Task<ActionResult<AssetDto>> CreateAsset(AssetDto assetDto)
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        public async Task<ActionResult> CreateAsset([FromBody]AssetDtoResponse assetDtoResponse)
         {
-            var asset = _mapper.Map<Asset>(assetDto);
+            if (assetDtoResponse == null)
+            {
+                return BadRequest();
+            }
+
+            var asset = _mapper.Map<Asset>(assetDtoResponse);
             asset.Id = Guid.NewGuid();
             _context.Assets.Add(asset);
             await _context.SaveChangesAsync();
-
-            return assetDto;
+            
+            return CreatedAtAction(nameof(GetAssetGroupList), new { id = asset.Id },null);
         }
 
-        [HttpDelete]
-        public async Task<int> DeleteAsset(Guid id)
+        [HttpDelete("{id}")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<ActionResult> DeleteAsset(Guid id)
         {
-            return 0;
+            var asset = _context.Assets.FirstOrDefault(x => x.Id == id);
+            if (asset == null)
+            {
+                return NotFound();
+                
+            }
+            asset.IsDeleted = true;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
 
