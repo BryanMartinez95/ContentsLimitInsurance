@@ -18,6 +18,7 @@ Install Entity Framework Core CLI or PMC Tools
 ### Swagger URL
 - `https://localhost:44326/swagger/index.html`
 ## Deployment
+Application is currently deployed on Azure App Services: https://contentslimitinsurance20200731222609.azurewebsites.net
 ## Built With
 - [React](https://reactjs.org/) Front End SPA
 - [ASP.NET Core 3.1](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) Back End API
