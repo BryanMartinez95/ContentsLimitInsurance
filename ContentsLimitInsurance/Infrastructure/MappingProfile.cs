@@ -12,7 +12,8 @@ namespace ContentsLimitInsurance.Infrastructure
     {
         public MappingProfile()
         {
-            CreateMap<Asset, AssetDto>();
+            CreateMap<Asset, AssetDto>()
+                .ForMember(x=> x.AssetCategoryName, y=> y.MapFrom(s => s.AssetCategory != null ? s.AssetCategory.Name : null));
             CreateMap<AssetCategory, AssetCategoryDto>();
         }
     }
