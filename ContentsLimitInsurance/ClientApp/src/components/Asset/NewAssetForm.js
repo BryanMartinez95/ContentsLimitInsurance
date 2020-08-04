@@ -10,6 +10,7 @@ const NewAssetForm = (props) => {
 
   const [assetCategories, setAssetCategoriesState] = useState([]);
   const [newAsset, setNewAssetState] = useState(newAssetTemplate);
+  const [submitDisabled, setSubmitDisabledState] = useState(false);
 
   //Runs on page load
   //populates Asset Category list
@@ -41,6 +42,7 @@ const NewAssetForm = (props) => {
   };
 
   const handleSubmit = (event) => {
+    setSubmitDisabledState(true);
     axios.post("Asset/CreateAsset", newAsset).then(
       (response) => {
         props.updateAssetList();
@@ -50,6 +52,9 @@ const NewAssetForm = (props) => {
           ...newAssetTemplate,
           itemCategory: assetCategories.length > 0 ? assetCategories[0].id : "", //default item category to the first in the list
         });
+
+        //let button be clickable again
+        setSubmitDisabledState(false);
       },
       (error) => {
         //temporary alert on error
@@ -128,7 +133,8 @@ const NewAssetForm = (props) => {
                 disabled={
                   newAsset.itemName == "" ||
                   newAsset.itemValue == "" ||
-                  newAsset.Category == ""
+                  newAsset.Category == "" ||
+                  submitDisabled
                 }
               />{" "}
             </div>
