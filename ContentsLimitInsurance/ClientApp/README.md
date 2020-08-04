@@ -1,7 +1,12 @@
 # Contents Limit Insurance Front End React SPA
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 This project is currently not configured to run independently from its ASP.NET Core Api.
+
+
+# Project Structure
+
 
 ## Available Scripts
 
