@@ -12,7 +12,7 @@ Install Entity Framework Core CLI or PMC Tools
 
 Install Nodejs & npm https://nodejs.org/en/
 ## Usage
-build & Run with IDE/Visual Studio or run `dotnet run` 
+build & Run with IDE/Visual Studio or run `dotnet run` on CLI
 
 Access Locally `https://localhost:44326`
 
