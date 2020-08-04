@@ -2,7 +2,7 @@
 A web app made for Nude Solutions Developer Assignment for the purposes of allowing customers to calculate the total contents limit they require and maintain a list of high-value items.
 
 ###
-[Front End Documentation](https://github.com/BryanMartinez95/ContentsLimitInsurance/tree/master/ContentsLimitInsurance/ClientApp)
+See the [Front End Documentation](https://github.com/BryanMartinez95/ContentsLimitInsurance/tree/master/ContentsLimitInsurance/ClientApp) for more information over how the front end was designed.
 
 ## Prerequisites
 Install NET Core SDK https://dotnet.microsoft.com/download
@@ -23,6 +23,9 @@ Access Locally `https://localhost:44326`
 ### Swagger
 View & Test available APIs once project is running `https://localhost:44326/swagger/index.html`
 
+### XUnit
+Integration Tests the back end are done with XUnit in the [ContentsLimitInsurance.IntegrationTests](https://github.com/BryanMartinez95/ContentsLimitInsurance/tree/master/test/ContentsLimitInsurance.IntegrationTests) directory. Unit Tests can be done via Visual Studio or with CLI `dotnet test`
+ when inside the ContentsLimitInsurance.IntegrationTests folder
 ## Deployment
 Application is currently deployed on Azure App Services: https://contentslimitinsurance20200803193134.azurewebsites.net
 ## Built With
