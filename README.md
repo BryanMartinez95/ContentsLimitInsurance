@@ -26,6 +26,8 @@ View & Test available APIs once project is running `https://localhost:44326/swag
 ### XUnit
 Integration Tests the back end are done with XUnit in the [ContentsLimitInsurance.IntegrationTests](https://github.com/BryanMartinez95/ContentsLimitInsurance/tree/master/test/ContentsLimitInsurance.IntegrationTests) directory. Unit Tests can be done via Visual Studio or with CLI `dotnet test`
  when inside the ContentsLimitInsurance.IntegrationTests folder
+ 
+ Tests are ran with an in memory SQLite database
 ## Deployment
 Application is currently deployed on Azure App Services: https://contentslimitinsurance20200803193134.azurewebsites.net
 ## Built With
