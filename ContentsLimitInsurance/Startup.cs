@@ -1,5 +1,6 @@
 using AutoMapper;
 using ContentsLimitInsurance.Data;
+using ContentsLimitInsurance.Infrastructure.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +30,8 @@ namespace ContentsLimitInsurance
             services.AddControllers();
             services.AddDbContext<ContentsLimitContext>(options => options.UseSqlite(Configuration.GetConnectionString("ContentsLimitDatabase")));
 
-
+            services.AddTransient<IAssetService, AssetService>();
+            services.AddTransient<IAssetCategoryService, AssetCategoryService>();
             services.AddSwaggerGen();
 
             // In production, the React files will be served from this directory
@@ -54,14 +56,12 @@ namespace ContentsLimitInsurance
                 // specifying the Swagger JSON endpoint.
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contents Limit Insurance API V1");
                 });
-
             }
 
             app.UseHttpsRedirection();
 
-            //todo double check these ones
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             
@@ -73,9 +73,7 @@ namespace ContentsLimitInsurance
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
 
             app.UseSpa(spa =>

@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ContentsLimitInsurance.Migrations
+namespace ContentsLimitInsurance.Infrastructure.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,47 +61,47 @@ namespace ContentsLimitInsurance.Migrations
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("e97b124c-b09f-4bd1-93c1-b748032d37fe"), new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Living Room", "TV", 0.0 });
+                values: new object[] { new Guid("5a124f35-67fc-4f7a-81bb-4160b2d1af1b"), new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Living Room", "TV", 2000.0 });
 
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("d816f69f-fdee-426f-82ad-cae9da9657a9"), new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Living Room", "Playstation", 0.0 });
+                values: new object[] { new Guid("4b576cad-3f93-4a6f-86dd-30c70c748ab6"), new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Living Room", "Playstation", 400.0 });
 
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("dd7cf440-df22-46d5-ba1b-5e56f15bd581"), new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Bedroom", "Stereo", 0.0 });
+                values: new object[] { new Guid("e0a6554c-8b98-443e-8d68-a0ecb28c35c5"), new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Bedroom", "Stereo", 1600.0 });
 
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("11a963a8-2308-4e6c-9043-ecb28363f8e6"), new Guid("3b2320c7-8267-4b98-9593-702b1eb2e2cf"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Bedroom", "Shirts", 0.0 });
+                values: new object[] { new Guid("144343cd-e05d-4dd8-98da-762a38110de9"), new Guid("3b2320c7-8267-4b98-9593-702b1eb2e2cf"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Bedroom", "Shirts", 1100.0 });
 
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("0edf63d2-d93c-4b76-b902-d7beaad4566f"), new Guid("3b2320c7-8267-4b98-9593-702b1eb2e2cf"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Bedroom", "Jeans", 0.0 });
+                values: new object[] { new Guid("a86d0eaf-1deb-42ee-a49c-8e568087de6d"), new Guid("3b2320c7-8267-4b98-9593-702b1eb2e2cf"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Bedroom", "Jeans", 1100.0 });
 
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("e5b4d8cf-1c15-49e2-93a3-29064d91847e"), new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Kitchen", "Pots and Pans", 0.0 });
+                values: new object[] { new Guid("4d753d18-bc26-4502-8204-bcd6a8694604"), new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Kitchen", "Pots and Pans", 3000.0 });
 
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("6c25f943-04ae-4366-b9c7-ea43497e424c"), new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Kitchen", "Flatware", 0.0 });
+                values: new object[] { new Guid("5e888336-cc2d-4a83-b485-6494c39ed31f"), new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Kitchen", "Flatware", 500.0 });
 
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("4a04e950-7c79-4558-b810-1b46a15cf2b9"), new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Kitchen", "Knife Set", 0.0 });
+                values: new object[] { new Guid("aa52d401-5b50-4ef7-8b8b-5a07dfc579a0"), new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Kitchen", "Knife Set", 500.0 });
 
             migrationBuilder.InsertData(
                 table: "Assets",
                 columns: new[] { "Id", "AssetCategoryId", "DatePurchased", "IsDeleted", "Location", "Name", "Value" },
-                values: new object[] { new Guid("cdbc989b-7545-486e-b7c4-26a453444e9a"), new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Kitchen", "Misc", 0.0 });
+                values: new object[] { new Guid("5505dcd8-619e-47cf-ad46-fd6d30a8be8e"), new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, "Kitchen", "Misc", 1000.0 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Assets_AssetCategoryId",

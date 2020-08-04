@@ -16,7 +16,7 @@ const NewAssetForm = (props) => {
   //populates Asset Category list
   useEffect(() => {
     //todo add an if check to wait till this is populated, then load  the select.
-    axios.get("AssetCategory").then((response) => {
+    axios.get("AssetCategory/GetList").then((response) => {
       setAssetCategoriesState(response.data);
     });
   }, []);
@@ -42,8 +42,7 @@ const NewAssetForm = (props) => {
   };
 
   const handleSubmit = (event) => {
-    console.log(newAsset);
-    axios.post("Asset", newAsset).then((response) => {
+    axios.post("Asset/CreateAsset", newAsset).then((response) => {
       props.updateAssetList();
 
       //reset form

@@ -1,32 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
-using AutoMapper;
-using ContentsLimitInsurance.Data;
+using ContentsLimitInsurance.Infrastructure.Service;
 using ContentsLimitInsurance.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContentsLimitInsurance.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class AssetCategoryController : ControllerBase
     {
-        private readonly IMapper _mapper;
-        private readonly ContentsLimitContext _context;
+        private readonly IAssetCategoryService _assetCategoryService;
 
-        public AssetCategoryController(IMapper mapper, ContentsLimitContext context)
+        public AssetCategoryController(IAssetCategoryService assetCategoryService)
         {
-            _mapper = mapper;
-            _context = context;
+            _assetCategoryService = assetCategoryService;
         }
 
 
-        [HttpGet]
-        public IEnumerable<AssetCategoryDto> Get()
+        [HttpGet("GetList")]
+        [ProducesResponseType(typeof(List<AssetCategoryDto>), (int)HttpStatusCode.OK)]
+        public async Task<List<AssetCategoryDto>> GetList()
         {
-            return _mapper.Map<List<AssetCategoryDto>>(_context.AssetCategories.Where(x => x.IsDeleted == false).ToList());
+            return await _assetCategoryService.GetListAsync();
         }
     }
 }

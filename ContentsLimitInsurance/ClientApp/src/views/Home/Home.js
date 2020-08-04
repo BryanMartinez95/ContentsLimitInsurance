@@ -11,14 +11,13 @@ const Home = () => {
   }, []);
 
   const getAssetListHandler = () => {
-    axios.get("Asset").then((response) => {
-      console.log("getresposne", response.data);
+    axios.get("Asset/GetAssetGroupList").then((response) => {
       setAssetListState(response.data);
     });
   };
 
   const deleteAssetRowHandler = (id) => {
-    axios.delete("Asset/" + id).then((response) => {
+    axios.delete("Asset/DeleteAsset/" + id).then((response) => {
       getAssetListHandler();
     });
   };
