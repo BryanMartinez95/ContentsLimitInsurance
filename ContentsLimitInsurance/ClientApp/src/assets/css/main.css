@@ -1,0 +1,561 @@
+.color1 {
+  background-color: #17bebb;
+}
+.color2 {
+  background-color: #ed6a5a;
+}
+.color3 {
+  background-color: #586ba4;
+}
+.color4 {
+  background-color: #094074;
+}
+.color5 {
+  background-color: #3c6997;
+}
+.blue {
+  background-color: #003399;
+}
+.lightblue {
+  background-color: #80cff3;
+}
+.grey {
+  background-color: #ccc;
+}
+.lightgrey {
+  background-color: #eaeaea;
+}
+.darkgrey {
+  background-color: #545454;
+}
+.darkorange {
+  background-color: #eb5a4b;
+}
+.black {
+  background-color: #363636;
+}
+.black2 {
+  background-color: #252525;
+}
+.white {
+  background-color: #f7f7f7 !important;
+}
+.white-text {
+  color: #f7f7f7 !important;
+}
+.orange {
+  background-color: #f96e5b;
+}
+.red {
+  background-color: #cc443d;
+}
+
+.light-white {
+  background-color: #d9e3e8;
+}
+body,
+h1,
+h2,
+h3,
+p,
+a {
+  font-family: "Roboto", sans-serif !important;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+.body {
+  background-color: #f7f7f7;
+}
+
+.screensize {
+  min-height: 80%;
+}
+.addMargin {
+  margin-top: 100px !important;
+  margin-bottom: 100px !important;
+}
+
+.header {
+  border-bottom: 1px solid black;
+  padding-bottom: 30px;
+}
+/* Code blocks */
+code {
+  font-family: monospace !important;
+}
+.flex-container {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+.page-flex-container {
+  padding: 50px 50px 0px 50px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 2px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  width: 90%;
+  word-break: normal !important;
+  word-wrap: break-word;
+}
+.flex-item {
+  max-width: 50em;
+  padding: 0 10px 0 10px;
+  text-align: center;
+}
+@media screen and (max-width: 780px) {
+  .flex-container {
+    flex-grow: 1;
+  }
+}
+.centerContent {
+  margin: 0 auto;
+  max-width: 50em;
+}
+.construction {
+  width: 20%;
+}
+.dim {
+  width: 100%;
+  min-height: 100%;
+  z-index: -6;
+  display: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.picture {
+  max-width: 200px;
+}
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+video {
+  height: auto;
+  width: 100%;
+}
+.svg {
+  max-width: 100px;
+}
+.text-center {
+  text-align: center;
+  color: white;
+}
+.picture-center {
+  display: block;
+  margin: 0 auto;
+}
+.picture-project {
+  max-width: 80%;
+}
+/* creates a box with shadow */
+.boxed {
+  padding: 10px;
+  margin: 20px;
+  background-color: #f7f7f7;
+  opacity: 0.85;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+.flex-container-left-profile {
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+}
+.flex-container-column {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-container-left-profile picture {
+  height: 100%;
+}
+.flex-container-left-profile text {
+  height: 100%;
+}
+/*video text*/
+/* Container holding the image and the text */
+.centerContain {
+  position: relative;
+  text-align: center;
+}
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f7f7f7;
+}
+.centeredTop {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f7f7f7;
+}
+.columns.is-vcentered {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: absolute;
+}
+/* Add some content at the bottom of the video/page */
+.contentTMP {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+.page-footer {
+  background-color: #f5f5f5;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+.footer-icon-list li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.footer-link {
+  color: #545454;
+}
+@media screen and (max-width: 780px) {
+  .page-footer {
+    display: none;
+  }
+}
+.navbar-flex-group {
+  display: flex;
+  border-bottom-right-radius: 5px;
+  line-height: normal !important;
+  flex-grow: 1;
+}
+.nav-list {
+  list-style-type: none;
+  display: inline-flex;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Padding between items */
+.nav-list > li {
+  padding: 0px 25px;
+}
+.nav-list > li > a {
+  position: relative;
+  padding-right: 5px;
+  padding-left: 5px;
+  display: inline-block;
+  line-height: normal !important;
+  color: #363636 !important;
+  font-size: 120%;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-list > li > a::before {
+  content: "";
+  width: 0;
+  height: 2.5px;
+  background: #23527c;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  color: #23527c !important;
+}
+.nav-list > li > a::before {
+  content: "";
+  width: 0;
+  height: 2.5px;
+  background: #040303;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  color: #23527c !important;
+}
+.nav-list > li > a:hover::after {
+  width: 100%;
+}
+.nav-list > li > a:hover::before {
+  width: 100%;
+}
+.profilepic {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.menu {
+  display: none;
+}
+@media screen and (max-width: 780px) {
+  .profile-pic {
+    display: flex;
+    width: 50px;
+    justify-content: flex-end;
+  }
+  .fill {
+    display: flex !important;
+    flex-grow: 3;
+    justify-content: center;
+  }
+  .nav-list {
+    display: none;
+  }
+  .menu {
+    padding-right: 15px;
+    display: inline;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    color: #ccc;
+  }
+}
+.fill {
+  display: none;
+}
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  border-radius: 2px;
+  left: 0;
+  background-color: #545454;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+  box-shadow: 0 20px 16px 0 rgba(0, 0, 0, 0.2);
+}
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #eaeaea;
+  display: block;
+  transition: 0.3s;
+}
+.mobile-item {
+  border-bottom: 1px solid #ccc;
+}
+.mobile-item-top {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.mobile-item:hover {
+  color: #040303 !important;
+  padding-left: 16px;
+}
+.mobile-item-top:hover {
+  color: #040303 !important;
+  padding-left: 16px;
+}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover,
+.offcanvas a:focus {
+  color: #f1f1f1;
+}
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+.barsmenu:hover {
+  color: #040303;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.header-grid-item {
+  grid-area: header;
+}
+.main-grid-item {
+  grid-area: main;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
+}
+.main-grid-item div:nth-child(2) {
+  grid-column: 3;
+  grid-row: 2 / 4;
+}
+.main-grid-item div:nth-child(5) {
+  grid-column: 1 / 3;
+  grid-row: 1 / 5;
+}
+.footer-grid-item {
+  grid-area: footer;
+}
+.grid-container {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: auto 1fr auto;
+}
+header .stripes {
+  z-index: -1;
+  display: grid;
+  grid: repeat(5, 200px) / repeat(10, 1fr);
+  transform: skewY(-12deg);
+  transform-origin: 0;
+  background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+header .stripes :nth-child(1) {
+  grid-column: span 3;
+  background: #53f;
+}
+header .stripes :nth-child(2) {
+  grid-area: 3 / span 3 / auto / -1;
+  background: #4553ff;
+}
+header .stripes :nth-child(3) {
+  grid-row: 4;
+  grid-column: span 5;
+  background-color: #586ba4;
+}
+header .stripes :nth-child(4) {
+  grid-row: 4;
+  grid-column: span 5;
+  background-color: #586ba4;
+}
+header .stripes :nth-child(5) {
+  grid-row: 4;
+  grid-column: span 5;
+  background-color: #586ba4;
+}
+.testheader {
+  position: relative;
+}
+.cube,
+.cube * {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+.sides {
+  transform-style: preserve-3d;
+  perspective: 600px;
+}
+.front {
+  transform: rotateY(0deg) translateZ(50px);
+}
+.back {
+  transform: rotateY(-180deg) translateZ(50px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(50px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(50px);
+}

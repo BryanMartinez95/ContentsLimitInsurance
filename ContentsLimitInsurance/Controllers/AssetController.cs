@@ -38,6 +38,12 @@ namespace ContentsLimitInsurance.Controllers
             {
                 return BadRequest();
             }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var id = await _assetService.CreateAssetAsync(assetDtoResponse);
 
             return CreatedAtAction(nameof(GetAssetGroupList), new { id = id });

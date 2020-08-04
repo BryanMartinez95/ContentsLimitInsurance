@@ -8,9 +8,14 @@ const AssetRow = (props) => {
       {/* <td>{props.location}</td> */}
       {/* <td>{props.datePurchased.toString()}</td> */}
 
-      <td>${props.value.toFixed(2)}</td>
       <td>
-        <button onClick={() => props.deleteAssetRowHandler(props.id)}>X</button>
+        <span className="is-pulled-right">${props.value.toFixed(2)}</span>
+      </td>
+      <td>
+        <button
+          className="delete is-pulled-right"
+          onClick={() => props.deleteAssetRowHandler(props.id)}
+        ></button>
       </td>
     </tr>
   );

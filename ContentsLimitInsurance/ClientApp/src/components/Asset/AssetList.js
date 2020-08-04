@@ -30,20 +30,27 @@ const AssetList = (props) => {
     );
   });
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Name</th>
-          {/* <th>Location</th> */}
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        {items}
-        <AssetGroupRow groupByValue="TOTAL" value={total}></AssetGroupRow>
-      </tbody>
-    </table>
+    // is-fullwidth
+    <div className="table-container">
+      <table className="table is-fullwidth">
+        <thead>
+          <tr>
+            {/* is-narrow */}
+            <th className="">Category</th>
+            <th>Name</th>
+            {/* <th>Location</th> */}
+            <th>
+              <span className="is-pulled-right">Value</span>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {items}
+          <AssetGroupRow groupByValue="TOTAL" value={total}></AssetGroupRow>
+        </tbody>
+      </table>
+    </div>
   );
 };
 

@@ -24,11 +24,19 @@ const Home = () => {
 
   return (
     <Fragment>
-      <AssetList
-        assetGroupList={assetGroupListState}
-        deleteAssetRowHandler={deleteAssetRowHandler}
-      ></AssetList>
-      <NewAssetForm updateAssetList={getAssetListHandler}></NewAssetForm>
+      <div className="container">
+        <h4 className="title is-4">Asset Inventory List</h4>
+        <AssetList
+          assetGroupList={assetGroupListState}
+          deleteAssetRowHandler={deleteAssetRowHandler}
+        ></AssetList>
+      </div>
+      <br />
+      <div className="container">
+        {/* <div className="column is-12"> */}
+        <NewAssetForm updateAssetList={getAssetListHandler}></NewAssetForm>
+        {/* </div> */}
+      </div>
     </Fragment>
   );
 };
