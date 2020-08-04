@@ -6,7 +6,7 @@ This project is currently not configured to run independently from its ASP.NET C
 
 
 # Project Structure
-
+![Project Structure](https://github.com/BryanMartinez95/ContentsLimitInsurance/blob/master/ContentsLimitInsurance/ClientApp/src/assets/img/ContentsLimitInsuranceFrontEnd.png)
 
 ## Available Scripts
 
