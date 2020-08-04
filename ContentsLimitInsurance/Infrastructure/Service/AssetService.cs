@@ -32,7 +32,7 @@ namespace ContentsLimitInsurance.Infrastructure.Service
             //get all assets, then map to  AssetDto, then group by category.
             //can refactor later to group by different fields
             var assetListGroup = _mapper.Map<List<AssetDto>>(
-               await _context.Assets.Include("AssetCategory").Where(x => x.IsDeleted == false).ToListAsync()).GroupBy(x => x.AssetCategoryId);
+               await _context.Assets.Include("AssetCategory").Where(x => x.IsDeleted == false).ToListAsync()).OrderBy(x=> x.AssetCategoryName).GroupBy(x => x.AssetCategoryId);
             var groupByList = new List<AssetGroupDto>();
 
             var assetCategories = _context.AssetCategories.Where(x => x.IsDeleted == false).ToList();
