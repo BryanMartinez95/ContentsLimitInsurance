@@ -1,9 +1,8 @@
-﻿
-using System;
-using ContentsLimitInsurance.Data.Entities;
+﻿using System;
+using ContentsLimitInsurance.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContentsLimitInsurance.Data
+namespace ContentsLimitInsurance.Infrastructure
 {
     public class ContentsLimitContext : DbContext
     {

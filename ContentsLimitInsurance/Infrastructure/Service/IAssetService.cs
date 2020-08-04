@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ContentsLimitInsurance.Data.Entities;
+using ContentsLimitInsurance.Entities;
 using ContentsLimitInsurance.Models;
 
 namespace ContentsLimitInsurance.Infrastructure.Service

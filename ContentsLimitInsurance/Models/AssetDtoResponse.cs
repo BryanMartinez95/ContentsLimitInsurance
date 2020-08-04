@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using AutoMapper;
-using ContentsLimitInsurance.Data.Entities;
+using ContentsLimitInsurance.Entities;
 using ContentsLimitInsurance.Infrastructure.Annotations;
 using ContentsLimitInsurance.Infrastructure.Automapper;
 

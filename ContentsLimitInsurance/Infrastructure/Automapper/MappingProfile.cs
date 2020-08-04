@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using AutoMapper;
-using ContentsLimitInsurance.Data.Entities;
-using ContentsLimitInsurance.Models;
 
 namespace ContentsLimitInsurance.Infrastructure.Automapper
 {

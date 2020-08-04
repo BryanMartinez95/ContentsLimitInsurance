@@ -1,8 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace ContentsLimitInsurance.Data.Entities
+namespace ContentsLimitInsurance.Entities
 {
     public class AssetCategory
     {

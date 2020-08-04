@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ContentsLimitInsurance.Data.Entities
+namespace ContentsLimitInsurance.Entities
 {
     public class Asset
     {

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Principal;
 using System.Threading.Tasks;
 using AutoMapper;
-using ContentsLimitInsurance.Data;
-using ContentsLimitInsurance.Data.Entities;
+using ContentsLimitInsurance.Entities;
 using ContentsLimitInsurance.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -73,7 +70,7 @@ namespace ContentsLimitInsurance.Infrastructure.Service
         }
 
 
-        //get first then update IsDeleted
+        //get by id first then update IsDeleted
         public async Task<bool> DeleteAsset(Guid id)
         {
             var asset = await _context.Assets.FindAsync(id);

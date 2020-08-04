@@ -1,15 +1,11 @@
 ﻿
 using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
 using AutoMapper;
-using ContentsLimitInsurance.Data.Entities;
-using ContentsLimitInsurance.Infrastructure.Automapper;
+using ContentsLimitInsurance.Entities;
 using ContentsLimitInsurance.Infrastructure.Service;
 using ContentsLimitInsurance.Models;
-using Microsoft.EntityFrameworkCore.Internal;
 using Xunit;
 
 namespace ContentsLimitInsurance.IntegrationTests.Services

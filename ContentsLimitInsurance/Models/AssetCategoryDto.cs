@@ -1,5 +1,5 @@
 ﻿using System;
-using ContentsLimitInsurance.Data.Entities;
+using ContentsLimitInsurance.Entities;
 using ContentsLimitInsurance.Infrastructure.Automapper;
 
 namespace ContentsLimitInsurance.Models

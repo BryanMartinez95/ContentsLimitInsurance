@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using ContentsLimitInsurance.Data;
 using ContentsLimitInsurance.Models;
 using Microsoft.EntityFrameworkCore;
 

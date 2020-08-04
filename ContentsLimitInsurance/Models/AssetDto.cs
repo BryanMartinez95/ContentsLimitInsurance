@@ -1,6 +1,6 @@
 ﻿using System;
 using AutoMapper;
-using ContentsLimitInsurance.Data.Entities;
+using ContentsLimitInsurance.Entities;
 using ContentsLimitInsurance.Infrastructure.Automapper;
 
 namespace ContentsLimitInsurance.Models

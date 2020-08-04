@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ContentsLimitInsurance.Infrastructure.Annotations
 {
+    //Guid? cannot be Guid.Empty or null
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter)]
     public class NotEmptyGuidAttribute : ValidationAttribute
     {

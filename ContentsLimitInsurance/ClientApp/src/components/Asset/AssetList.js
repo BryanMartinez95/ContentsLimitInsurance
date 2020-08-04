@@ -30,15 +30,12 @@ const AssetList = (props) => {
     );
   });
   return (
-    // is-fullwidth
     <div className="table-container">
       <table className="table is-fullwidth">
         <thead>
           <tr>
-            {/* is-narrow */}
             <th className="">Category</th>
             <th>Name</th>
-            {/* <th>Location</th> */}
             <th>
               <span className="is-pulled-right">Value</span>
             </th>

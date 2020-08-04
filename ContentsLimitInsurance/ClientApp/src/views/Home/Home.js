@@ -33,9 +33,7 @@ const Home = () => {
       </div>
       <br />
       <div className="container">
-        {/* <div className="column is-12"> */}
         <NewAssetForm updateAssetList={getAssetListHandler}></NewAssetForm>
-        {/* </div> */}
       </div>
     </Fragment>
   );

@@ -1,11 +1,10 @@
 using System.Reflection;
 using AutoMapper;
-using ContentsLimitInsurance.Data;
+using ContentsLimitInsurance.Infrastructure;
 using ContentsLimitInsurance.Infrastructure.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

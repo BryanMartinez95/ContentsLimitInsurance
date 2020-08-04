@@ -1,6 +1,6 @@
 ﻿using System;
 using AutoMapper;
-using ContentsLimitInsurance.Data;
+using ContentsLimitInsurance.Infrastructure;
 using ContentsLimitInsurance.Infrastructure.Automapper;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;

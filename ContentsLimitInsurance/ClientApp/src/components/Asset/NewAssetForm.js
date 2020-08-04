@@ -8,7 +8,6 @@ const NewAssetForm = (props) => {
     itemCategory: "",
   };
 
-  const [isLoading, setisLoadingState] = useState(true);
   const [assetCategories, setAssetCategoriesState] = useState([]);
   const [newAsset, setNewAssetState] = useState(newAssetTemplate);
 
@@ -20,7 +19,7 @@ const NewAssetForm = (props) => {
     });
   }, []);
 
-  //once assetCategories is populated, set first category to default
+  //updates default AssetCategory once the list is loaded
   useEffect(() => {
     setNewAssetState({
       ...newAsset,
@@ -28,8 +27,8 @@ const NewAssetForm = (props) => {
     });
   }, [assetCategories]);
 
+  //handles form change events
   const handleChange = (event) => {
-    console.log(event.target.value);
     const updateValue =
       event.target.type === "number" && event.target.value != ""
         ? parseFloat(event.target.value)
@@ -46,14 +45,14 @@ const NewAssetForm = (props) => {
       (response) => {
         props.updateAssetList();
 
-        //reset form
+        //reset form once item is submitted
         setNewAssetState({
           ...newAssetTemplate,
           itemCategory: assetCategories.length > 0 ? assetCategories[0].id : "", //default item category to the first in the list
         });
       },
       (error) => {
-        // console.log("error", error);
+        //temporary alert on error
         alert(error);
       }
     );
@@ -108,7 +107,11 @@ const NewAssetForm = (props) => {
             <div className="field">
               <label className="label">Category</label>
               <div className="select">
-                <select name="itemCategory" onChange={handleChange}>
+                <select
+                  name="itemCategory"
+                  onChange={handleChange}
+                  value={newAsset.itemCategory}
+                >
                   {assetCategoriesOptions}
                 </select>
               </div>
