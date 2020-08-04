@@ -31,7 +31,7 @@ Integration Tests the back end are done with XUnit in the [ContentsLimitInsuranc
 ## Deployment
 Application is currently deployed on Azure App Services: https://contentslimitinsurance20200803193134.azurewebsites.net
 ## Built With
-- [React](https://reactjs.org/) Front End SPA
+- [React 16.13.1](https://reactjs.org/) Front End SPA
 - [ASP.NET Core 3.1](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) Back End API
 - [EntityFrameworkCore](https://docs.microsoft.com/en-us/ef/) on [SQLite](https://www.sqlite.org/index.html) for demo purposes.
 - [Automapper](https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection) Entity to Dto Mapping
