@@ -15,8 +15,7 @@ const NewAssetForm = (props) => {
   //Runs on page load
   //populates Asset Category list
   useEffect(() => {
-    //todo add an if check to wait till this is populated, then load  the select.
-    axios.get("AssetCategory").then((response) => {
+    axios.get("AssetCategory/GetList").then((response) => {
       setAssetCategoriesState(response.data);
     });
   }, []);
@@ -30,8 +29,9 @@ const NewAssetForm = (props) => {
   }, [assetCategories]);
 
   const handleChange = (event) => {
+    console.log(event.target.value);
     const updateValue =
-      event.target.type === "number"
+      event.target.type === "number" && event.target.value != ""
         ? parseFloat(event.target.value)
         : event.target.value;
 
@@ -42,16 +42,21 @@ const NewAssetForm = (props) => {
   };
 
   const handleSubmit = (event) => {
-    console.log(newAsset);
-    axios.post("Asset", newAsset).then((response) => {
-      props.updateAssetList();
+    axios.post("Asset/CreateAsset", newAsset).then(
+      (response) => {
+        props.updateAssetList();
 
-      //reset form
-      setNewAssetState({
-        ...newAssetTemplate,
-        itemCategory: assetCategories.length > 0 ? assetCategories[0].id : "", //default item category to the first in the list
-      });
-    });
+        //reset form
+        setNewAssetState({
+          ...newAssetTemplate,
+          itemCategory: assetCategories.length > 0 ? assetCategories[0].id : "", //default item category to the first in the list
+        });
+      },
+      (error) => {
+        // console.log("error", error);
+        alert(error);
+      }
+    );
 
     event.preventDefault();
   };
@@ -66,25 +71,67 @@ const NewAssetForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Name</label>
-      <input
-        type="text"
-        name="itemName"
-        value={newAsset.itemName}
-        onChange={handleChange}
-      />
-      <label>Value</label>
-      <input
-        type="number"
-        name="itemValue"
-        value={newAsset.itemValue}
-        onChange={handleChange}
-      ></input>
-      <label>Category</label>
-      <select name="itemCategory" onChange={handleChange}>
-        {assetCategoriesOptions}
-      </select>
-      <input type="submit" value="Add" />
+      <div className="card">
+        <header className="card-header is-dark">
+          <h3 className="card-header-title">Add Asset</h3>
+        </header>
+
+        <div className="card-content">
+          <div className="content">
+            <div className="field">
+              <label className="label">Name</label>
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="itemName"
+                  placeholder="Name"
+                  value={newAsset.itemName}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="field">
+              <label className="label">Value</label>
+              <div className="control">
+                <input
+                  className="input"
+                  type="number"
+                  name="itemValue"
+                  placeholder="Value"
+                  value={newAsset.itemValue}
+                  onChange={handleChange}
+                ></input>
+              </div>
+            </div>
+
+            <div className="field">
+              <label className="label">Category</label>
+              <div className="select">
+                <select name="itemCategory" onChange={handleChange}>
+                  {assetCategoriesOptions}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer className="card-footer level-right">
+          <div className="field">
+            <div className="control">
+              <input
+                className="button is-link"
+                type="submit"
+                value="Add"
+                disabled={
+                  newAsset.itemName == "" ||
+                  newAsset.itemValue == "" ||
+                  newAsset.Category == ""
+                }
+              />{" "}
+            </div>
+          </div>
+        </footer>
+      </div>
     </form>
   );
 };

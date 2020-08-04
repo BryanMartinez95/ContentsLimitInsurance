@@ -3,14 +3,16 @@ using System;
 using ContentsLimitInsurance.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ContentsLimitInsurance.Migrations
+namespace ContentsLimitInsurance.Infrastructure.Migrations
 {
     [DbContext(typeof(ContentsLimitContext))]
-    partial class ContentsLimitContextModelSnapshot : ModelSnapshot
+    [Migration("20200804023829_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,93 +51,93 @@ namespace ContentsLimitInsurance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e97b124c-b09f-4bd1-93c1-b748032d37fe"),
+                            Id = new Guid("5a124f35-67fc-4f7a-81bb-4160b2d1af1b"),
                             AssetCategoryId = new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Living Room",
                             Name = "TV",
-                            Value = 0.0
+                            Value = 2000.0
                         },
                         new
                         {
-                            Id = new Guid("d816f69f-fdee-426f-82ad-cae9da9657a9"),
+                            Id = new Guid("4b576cad-3f93-4a6f-86dd-30c70c748ab6"),
                             AssetCategoryId = new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Living Room",
                             Name = "Playstation",
-                            Value = 0.0
+                            Value = 400.0
                         },
                         new
                         {
-                            Id = new Guid("dd7cf440-df22-46d5-ba1b-5e56f15bd581"),
+                            Id = new Guid("e0a6554c-8b98-443e-8d68-a0ecb28c35c5"),
                             AssetCategoryId = new Guid("64bc457a-e276-4ff4-ac5f-fbf0511eb5ab"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Bedroom",
                             Name = "Stereo",
-                            Value = 0.0
+                            Value = 1600.0
                         },
                         new
                         {
-                            Id = new Guid("11a963a8-2308-4e6c-9043-ecb28363f8e6"),
+                            Id = new Guid("144343cd-e05d-4dd8-98da-762a38110de9"),
                             AssetCategoryId = new Guid("3b2320c7-8267-4b98-9593-702b1eb2e2cf"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Bedroom",
                             Name = "Shirts",
-                            Value = 0.0
+                            Value = 1100.0
                         },
                         new
                         {
-                            Id = new Guid("0edf63d2-d93c-4b76-b902-d7beaad4566f"),
+                            Id = new Guid("a86d0eaf-1deb-42ee-a49c-8e568087de6d"),
                             AssetCategoryId = new Guid("3b2320c7-8267-4b98-9593-702b1eb2e2cf"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Bedroom",
                             Name = "Jeans",
-                            Value = 0.0
+                            Value = 1100.0
                         },
                         new
                         {
-                            Id = new Guid("e5b4d8cf-1c15-49e2-93a3-29064d91847e"),
+                            Id = new Guid("4d753d18-bc26-4502-8204-bcd6a8694604"),
                             AssetCategoryId = new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Kitchen",
                             Name = "Pots and Pans",
-                            Value = 0.0
+                            Value = 3000.0
                         },
                         new
                         {
-                            Id = new Guid("6c25f943-04ae-4366-b9c7-ea43497e424c"),
+                            Id = new Guid("5e888336-cc2d-4a83-b485-6494c39ed31f"),
                             AssetCategoryId = new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Kitchen",
                             Name = "Flatware",
-                            Value = 0.0
+                            Value = 500.0
                         },
                         new
                         {
-                            Id = new Guid("4a04e950-7c79-4558-b810-1b46a15cf2b9"),
+                            Id = new Guid("aa52d401-5b50-4ef7-8b8b-5a07dfc579a0"),
                             AssetCategoryId = new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Kitchen",
                             Name = "Knife Set",
-                            Value = 0.0
+                            Value = 500.0
                         },
                         new
                         {
-                            Id = new Guid("cdbc989b-7545-486e-b7c4-26a453444e9a"),
+                            Id = new Guid("5505dcd8-619e-47cf-ad46-fd6d30a8be8e"),
                             AssetCategoryId = new Guid("44a4685a-9485-486b-b8d9-75553fb6f3f0"),
                             DatePurchased = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Location = "Kitchen",
                             Name = "Misc",
-                            Value = 0.0
+                            Value = 1000.0
                         });
                 });
 

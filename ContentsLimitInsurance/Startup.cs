@@ -1,5 +1,7 @@
+using System.Reflection;
 using AutoMapper;
 using ContentsLimitInsurance.Data;
+using ContentsLimitInsurance.Infrastructure.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -27,9 +29,11 @@ namespace ContentsLimitInsurance
 
             services.AddAutoMapper(typeof(Startup).Assembly);
             services.AddControllers();
+            ConfigureDatabaseServices(services);
             services.AddDbContext<ContentsLimitContext>(options => options.UseSqlite(Configuration.GetConnectionString("ContentsLimitDatabase")));
 
-
+            services.AddTransient<IAssetService, AssetService>();
+            services.AddTransient<IAssetCategoryService, AssetCategoryService>();
             services.AddSwaggerGen();
 
             // In production, the React files will be served from this directory
@@ -39,8 +43,18 @@ namespace ContentsLimitInsurance
             });
         }
 
+        // We have to override this method in our TestStartup, because we want to inject our custom database services
+        protected virtual void ConfigureDatabaseServices(IServiceCollection services)
+        {
+            services.AddDbContext<ContentsLimitContext>(options =>
+                options.UseSqlite(
+                    Configuration.GetConnectionString("ContentsLimitDatabase"),
+                    builder => builder.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name)
+                ));
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public virtual void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -54,14 +68,12 @@ namespace ContentsLimitInsurance
                 // specifying the Swagger JSON endpoint.
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contents Limit Insurance API V1");
                 });
-
             }
 
             app.UseHttpsRedirection();
 
-            //todo double check these ones
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             
@@ -73,9 +85,7 @@ namespace ContentsLimitInsurance
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
 
             app.UseSpa(spa =>

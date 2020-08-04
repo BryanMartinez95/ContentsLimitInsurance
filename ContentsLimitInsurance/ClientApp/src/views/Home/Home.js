@@ -11,25 +11,32 @@ const Home = () => {
   }, []);
 
   const getAssetListHandler = () => {
-    axios.get("Asset").then((response) => {
-      console.log("getresposne", response.data);
+    axios.get("Asset/GetAssetGroupList").then((response) => {
       setAssetListState(response.data);
     });
   };
 
   const deleteAssetRowHandler = (id) => {
-    axios.delete("Asset/" + id).then((response) => {
+    axios.delete("Asset/DeleteAsset/" + id).then((response) => {
       getAssetListHandler();
     });
   };
 
   return (
     <Fragment>
-      <AssetList
-        assetGroupList={assetGroupListState}
-        deleteAssetRowHandler={deleteAssetRowHandler}
-      ></AssetList>
-      <NewAssetForm updateAssetList={getAssetListHandler}></NewAssetForm>
+      <div className="container">
+        <h4 className="title is-4">Asset Inventory List</h4>
+        <AssetList
+          assetGroupList={assetGroupListState}
+          deleteAssetRowHandler={deleteAssetRowHandler}
+        ></AssetList>
+      </div>
+      <br />
+      <div className="container">
+        {/* <div className="column is-12"> */}
+        <NewAssetForm updateAssetList={getAssetListHandler}></NewAssetForm>
+        {/* </div> */}
+      </div>
     </Fragment>
   );
 };
