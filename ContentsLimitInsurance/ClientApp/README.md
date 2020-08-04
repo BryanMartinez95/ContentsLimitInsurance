@@ -5,9 +5,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This project is currently not configured to run independently from its ASP.NET Core Api. The app must be started via ASP.Net Core `dotnet run` or through Visual Studio/IDE
 
 
-# Project Structure
+## Project Structure
 ![Project Structure](https://github.com/BryanMartinez95/ContentsLimitInsurance/blob/master/ContentsLimitInsurance/ClientApp/src/assets/img/ContentsLimitInsuranceFrontEnd.png)
 Demo here https://contentslimitinsurance20200803193134.azurewebsites.net/
+
+
+## Mobile Views
+<img src="https://github.com/BryanMartinez95/ContentsLimitInsurance/blob/master/ContentsLimitInsurance/ClientApp/src/assets/img/mobile1.jpg" alt="mobile1" width="400"/>
+<img src="https://github.com/BryanMartinez95/ContentsLimitInsurance/blob/master/ContentsLimitInsurance/ClientApp/src/assets/img/mobile2.jpg" alt="mobile2" width="400"/>
+
+
 
 ## Available Scripts
 
