@@ -7,9 +7,8 @@ This project is currently not configured to run independently from its ASP.NET C
 
 # Project Structure
 ![Project Structure](https://github.com/BryanMartinez95/ContentsLimitInsurance/blob/master/ContentsLimitInsurance/ClientApp/src/assets/img/ContentsLimitInsuranceFrontEnd.png)
-Simple Project Structure (Key Components)
-
 Demo here https://contentslimitinsurance20200803193134.azurewebsites.net/
+
 ## Available Scripts
 
 In the project directory, you can run:
