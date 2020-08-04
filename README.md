@@ -14,7 +14,7 @@ Install Entity Framework Core CLI or PMC Tools
 - [Visual Studio 2019 Package Manager Console](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/powershell)
 
 Install Nodejs & npm https://nodejs.org/en/
-## Usage
+## Development
 build & Run with IDE/Visual Studio or run `dotnet run` on CLI
 
 Access Locally `https://localhost:44326`
