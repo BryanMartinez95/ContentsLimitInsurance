@@ -2,7 +2,7 @@
 A web app made for Nude Solutions Developer Assignment for the purposes of allowing customers to calculate the total contents limit they require and maintain a list of high-value items.
 
 ###
-(Front End Documentation)[https://github.com/BryanMartinez95/ContentsLimitInsurance/tree/master/ContentsLimitInsurance/ClientApp]
+[Front End Documentation](https://github.com/BryanMartinez95/ContentsLimitInsurance/tree/master/ContentsLimitInsurance/ClientApp)
 
 ## Prerequisites
 Install NET Core SDK https://dotnet.microsoft.com/download
