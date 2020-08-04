@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project is currently not configured to run independently from its ASP.NET Core Api.
+This project is currently not configured to run independently from its ASP.NET Core Api. The app must be started via ASP.Net Core `dotnet run` or through Visual Studio/IDE
 
 
 # Project Structure
