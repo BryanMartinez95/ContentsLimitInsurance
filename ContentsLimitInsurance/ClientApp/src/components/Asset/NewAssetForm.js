@@ -59,6 +59,9 @@ const NewAssetForm = (props) => {
       (error) => {
         //temporary alert on error
         alert(error);
+
+        //let button be clickable again
+        setSubmitDisabledState(false);
       }
     );
 
