@@ -71,5 +71,18 @@ namespace ContentsLimitInsurance.Infrastructure.Service
             asset.IsDeleted = true;
             return await _context.SaveChangesAsync() > 0;
         }
+
+
+        //get first then update IsDeleted
+        public async Task<bool> DeleteAsset(Guid id)
+        {
+            var asset = await _context.Assets.FindAsync(id);
+            if (asset == null)
+            {
+                return false;
+            }
+            asset.IsDeleted = true;
+            return await _context.SaveChangesAsync() > 0;
+        }
     }
 }

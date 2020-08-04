@@ -15,5 +15,7 @@ namespace ContentsLimitInsurance.Infrastructure.Service
         //entity needs to be in db tracking
         Task<bool> DeleteAsset(Asset asset);
 
+        Task<bool> DeleteAsset(Guid id);
+
     }
 }

@@ -1,3 +1,4 @@
+using System.Reflection;
 using AutoMapper;
 using ContentsLimitInsurance.Data;
 using ContentsLimitInsurance.Infrastructure.Service;
@@ -28,6 +29,7 @@ namespace ContentsLimitInsurance
 
             services.AddAutoMapper(typeof(Startup).Assembly);
             services.AddControllers();
+            ConfigureDatabaseServices(services);
             services.AddDbContext<ContentsLimitContext>(options => options.UseSqlite(Configuration.GetConnectionString("ContentsLimitDatabase")));
 
             services.AddTransient<IAssetService, AssetService>();
@@ -41,8 +43,18 @@ namespace ContentsLimitInsurance
             });
         }
 
+        // We have to override this method in our TestStartup, because we want to inject our custom database services
+        protected virtual void ConfigureDatabaseServices(IServiceCollection services)
+        {
+            services.AddDbContext<ContentsLimitContext>(options =>
+                options.UseSqlite(
+                    Configuration.GetConnectionString("ContentsLimitDatabase"),
+                    builder => builder.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name)
+                ));
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public virtual void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
